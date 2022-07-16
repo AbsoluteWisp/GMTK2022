@@ -1,0 +1,8 @@
+# Unity non-required folders
+Library/
+Logs/
+Temp/
+UserSettings/
+
+# Editor
+.vscode/
