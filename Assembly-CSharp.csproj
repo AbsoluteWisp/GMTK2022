@@ -41,6 +41,7 @@
      <Compile Include="Assets\GridMovement.cs" />
      <Compile Include="Assets\DiceSelector.cs" />
      <Compile Include="Assets\CameraFollow.cs" />
+     <Compile Include="Assets\Pickups.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
