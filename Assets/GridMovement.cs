@@ -26,6 +26,14 @@ public class GridMovement : MonoBehaviour {
 				DiceSelector.instance.DisableCurrent();
 				DiceSelector.instance.Select(null);
 				ClearMarkers();
+
+				Pickups.instance.TryPickupPos(mouseCellPos);
+				if (Pickups.instance.TryDoorPos(mouseCellPos)) {
+					print("End level");
+				}
+				else {
+					print("Keys required!");
+				}
 			}
 		}
 
