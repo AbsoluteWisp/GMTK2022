@@ -2,26 +2,35 @@ using UnityEngine;
 
 public class DiceSelector : MonoBehaviour {
 	public Dice[] dices;
-	public Dice current;
+	public GridMovement playerGridMovement;
+
+	[HideInInspector] public Dice current;
+
 	public Transform indicatorArrow;
 
 	public static DiceSelector instance;
 
-	void Start() {
+	void Awake() {
 		instance = this;
 	}
 
 	public void Select(Dice selectedDice) {
-		indicatorArrow.gameObject.SetActive(true);
-		current = selectedDice;
+		if (selectedDice != null) {
+			if (!selectedDice.isDisabled) {
+				indicatorArrow.gameObject.SetActive(true);
+				current = selectedDice;
+				GridMovement.instance.VisualiseDice(selectedDice);
 
-		foreach (var dice in dices) {
-			if (selectedDice != dice) {
-				dice.Unselect();
-			}
-			else {
-				indicatorArrow.position = new Vector3(dice.transform.position.x, indicatorArrow.position.y, indicatorArrow.position.z);
+				indicatorArrow.position = new Vector3(selectedDice.transform.position.x, indicatorArrow.position.y, indicatorArrow.position.z);
 			}
 		}
+		else {
+			indicatorArrow.gameObject.SetActive(false);
+			current = null;
+		}
+	}
+
+	public void DisableCurrent() {
+		current.Disable();
 	}
 }
