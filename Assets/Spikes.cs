@@ -24,6 +24,7 @@ public class Spikes : MonoBehaviour {
 			currentHealth--;
 			healthDisplaySlider.value = currentHealth;
 			healthDisplayText.text = currentHealth + " / " + maxHealth;
+			AudioPlayer.instance.Hurt();
 		}
 
 		if (currentHealth <= 0) {
