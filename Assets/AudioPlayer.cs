@@ -10,7 +10,6 @@ public class AudioPlayer : MonoBehaviour
 	public AudioClip hurt;
 	public AudioClip door;
 	public AudioClip click;
-	public AudioClip roll;
 
 	AudioSource audioSource;
 
@@ -23,32 +22,34 @@ public class AudioPlayer : MonoBehaviour
 	}
 
 	public void Pickup() {
-		audioSource.Stop();
-		audioSource.clip = pickup;
-		audioSource.Play();
+		if (PlayerPrefs.GetInt("isAudio", 1) == 1) {
+			audioSource.Stop();
+			audioSource.clip = pickup;
+			audioSource.Play();			
+		}
 	}
 
 	public void Hurt() {
-		audioSource.Stop();
-		audioSource.clip = hurt;
-		audioSource.Play();
+		if (PlayerPrefs.GetInt("isAudio", 1) == 1) {
+			audioSource.Stop();
+			audioSource.clip = hurt;
+			audioSource.Play();			
+		}
 	}
 
 	public void Door() {
-		audioSource.Stop();
-		audioSource.clip = door;
-		audioSource.Play();
+		if (PlayerPrefs.GetInt("isAudio", 1) == 1) {
+			audioSource.Stop();
+			audioSource.clip = door;
+			audioSource.Play();
+		}
 	}
 
 	public void Click() {
-		audioSource.Stop();
-		audioSource.clip = click;
-		audioSource.Play();
-	}
-
-	public void Roll() {
-		audioSource.Stop();
-		audioSource.clip = roll;
-		audioSource.Play();
+		if (PlayerPrefs.GetInt("isAudio", 1) == 1) {
+			audioSource.Stop();
+			audioSource.clip = click;
+			audioSource.Play();			
+		}
 	}
 }
