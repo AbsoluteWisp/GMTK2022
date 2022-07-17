@@ -11,6 +11,12 @@ public class Pickups : MonoBehaviour {
 		instance = this;
 	}
 
+	void Update() {
+		if (total <= 0) {
+			OnAllPickups();
+		}
+	}
+
 	public void TryPickupPos(Vector3Int pos) {
 		if (References.pickupTilemap.HasTile(pos)) {
 			collected++;
@@ -30,7 +36,7 @@ public class Pickups : MonoBehaviour {
 		else return false;
 	}
 
-	void OnAllPickups() {
+	public void OnAllPickups() {
 		for (int x =References.doorTilemap.cellBounds.xMin; x <References.doorTilemap.cellBounds.xMax; x++) {
 			for (int y =References.doorTilemap.cellBounds.yMin; y <References.doorTilemap.cellBounds.yMax; y++) {
 				if (References.doorTilemap.HasTile(new Vector3Int(x, y))) {
