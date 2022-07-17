@@ -5,7 +5,6 @@ using TMPro;
 
 public class Spikes : MonoBehaviour {
 	public static Spikes instance;
-	public Tilemap spikeTilemap;
 	public int maxHealth;
 	public int currentHealth;
 	public TextMeshProUGUI healthDisplayText;
@@ -21,7 +20,7 @@ public class Spikes : MonoBehaviour {
 	}
 
 	public void TrySpikePos(Vector3Int pos) {
-		if (spikeTilemap.HasTile(pos)) {
+		if (References.spikeTilemap.HasTile(pos)) {
 			currentHealth--;
 			healthDisplaySlider.value = currentHealth;
 			healthDisplayText.text = currentHealth + " / " + maxHealth;
