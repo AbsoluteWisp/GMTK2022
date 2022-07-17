@@ -5,9 +5,14 @@ using TMPro;
 
 public class DiceRoller : MonoBehaviour
 {
+	public static DiceRoller instance;
 	public Dice[] dices;
 	public int currentRoll = 0;
 	public TextMeshProUGUI rollDisplay;
+
+	void Awake() {
+		instance = this;
+	}
 
 	void Start() {
 		Roll();
