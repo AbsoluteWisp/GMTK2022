@@ -16,8 +16,6 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void LoadLevel(int id) {
-		print("loadlevel");
-
 		foreach (var level in levels) {
 			level.gameObject.SetActive(false);
 		}
