@@ -20,6 +20,9 @@ public class LevelManager : MonoBehaviour {
 			level.gameObject.SetActive(false);
 		}
 		levels[id].gameObject.SetActive(true);
+
+		Pickups.collected = 0;
+
 		var tilemaps = levels[id].GetComponentsInChildren<Tilemap>();
 
 		foreach (var tilemap in tilemaps) {
@@ -29,7 +32,12 @@ public class LevelManager : MonoBehaviour {
 			else if (tilemap.gameObject.name == "Spikes") References.spikeTilemap = tilemap;
 		}
 
-		Pickups.collected = 0;
-		Pickups.total = pickupCounts[id];
+		// Set pickup count, or leave it up to the generator.
+		if (id <= 4) {
+			Pickups.total = pickupCounts[id];
+		}
+		else {
+			Generator.instance.Generate();
+		}
 	}
 }

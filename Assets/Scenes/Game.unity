@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &55680606
 Grid:
   m_ObjectHideFlags: 0
@@ -8299,7 +8299,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -9820,10 +9820,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 30d1048d57dc4704c96b4ad39b43126b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 8e19ceeb309480e469cde16fd43366c0, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 8e19ceeb309480e469cde16fd43366c0, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 829375dbcce44de47899408b6ca7e4ec, type: 3}
   - m_RefCount: 1
@@ -9896,6 +9896,7 @@ GameObject:
   - component: {fileID: 1070006681}
   - component: {fileID: 1070006682}
   - component: {fileID: 1070006683}
+  - component: {fileID: 1070006684}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -10028,8 +10029,31 @@ MonoBehaviour:
   - {fileID: 2007570264}
   - {fileID: 1348101181}
   - {fileID: 55680606}
+  - {fileID: 1628549630}
   pickupCounts: 0300000003000000000000000200000001000000
   markerTilemap: {fileID: 1771485283}
+--- !u!114 &1070006684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070006675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5787d23792800242a9d68892cb5680b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikes: {fileID: 824875341}
+  pickups: {fileID: 1625765197}
+  doors: {fileID: 98701528}
+  spike: {fileID: 11400000, guid: d994ad033b2672542a2b03bd3887b073, type: 2}
+  key: {fileID: 11400000, guid: 9f239a059256b5e4a8c807157e820bbf, type: 2}
+  door: {fileID: 11400000, guid: f92331f4487f5ee42a2337a323718c17, type: 2}
+  TL: {x: -1, y: 5, z: 0}
+  BR: {x: 13, y: -4, z: 0}
+  keyCount: 3
+  spikeCount: 10
 --- !u!1 &1151221836
 GameObject:
   m_ObjectHideFlags: 0
