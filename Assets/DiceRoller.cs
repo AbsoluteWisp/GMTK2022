@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DiceRoller : MonoBehaviour
 {
 	public Dice[] dices;
+	public int currentRoll = 0;
+	public TextMeshProUGUI rollDisplay;
 
 	void Start() {
 		Roll();
@@ -16,6 +19,8 @@ public class DiceRoller : MonoBehaviour
 			dice.SetNumber(value);
 			dice.Enable();
 		}
+		currentRoll++;
+		rollDisplay.text = "Roll " + currentRoll;
 
 		GridMovement.instance.ClearMarkers();
 		DiceSelector.instance.Select(null);
