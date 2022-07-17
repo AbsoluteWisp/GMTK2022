@@ -34,6 +34,8 @@ public class GridMovement : MonoBehaviour {
 				else {
 					print("Keys required!");
 				}
+
+				Spikes.instance.TrySpikePos(mouseCellPos);
 			}
 		}
 
