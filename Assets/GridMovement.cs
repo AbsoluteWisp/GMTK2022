@@ -29,7 +29,7 @@ public class GridMovement : MonoBehaviour {
 
 				Pickups.instance.TryPickupPos(mouseCellPos);
 				if (Pickups.instance.TryDoorPos(mouseCellPos)) {
-					print("End level");
+					GameOver.Win();
 				}
 
 				Spikes.instance.TrySpikePos(mouseCellPos);

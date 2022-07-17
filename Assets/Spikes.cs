@@ -28,11 +28,7 @@ public class Spikes : MonoBehaviour {
 		}
 
 		if (currentHealth <= 0) {
-			OnDeath();
+			GameOver.Lose();
 		}
-	}
-
-	void OnDeath() {
-		print("oof");
 	}
 }
