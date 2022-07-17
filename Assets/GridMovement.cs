@@ -31,9 +31,6 @@ public class GridMovement : MonoBehaviour {
 				if (Pickups.instance.TryDoorPos(mouseCellPos)) {
 					print("End level");
 				}
-				else {
-					print("Keys required!");
-				}
 
 				Spikes.instance.TrySpikePos(mouseCellPos);
 			}
