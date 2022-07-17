@@ -24,8 +24,10 @@ public class DiceRoller : MonoBehaviour
 			dice.SetNumber(value);
 			dice.Enable();
 		}
+
 		currentRoll++;
 		rollDisplay.text = "Roll " + currentRoll;
+		AudioPlayer.instance.Roll();
 
 		GridMovement.instance.ClearMarkers();
 		DiceSelector.instance.Select(null);

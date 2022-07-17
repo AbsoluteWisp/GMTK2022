@@ -15,13 +15,6 @@ public class LevelManager : MonoBehaviour {
 		LoadLevel(id);
 	}
 
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.Tab)) {
-			id++;
-			LoadLevel(id);
-		}
-	}
-
 	void LoadLevel(int id) {
 		print("loadlevel");
 

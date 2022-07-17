@@ -11,14 +11,11 @@ public class Pickups : MonoBehaviour {
 		instance = this;
 	}
 
-	void Update() {
-		print(collected + " / " + total);
-	}
-
 	public void TryPickupPos(Vector3Int pos) {
 		if (References.pickupTilemap.HasTile(pos)) {
 			collected++;
 			References.pickupTilemap.SetTile(pos, null);
+			AudioPlayer.instance.Pickup();
 		}
 		if (collected >= total) {
 			OnAllPickups();
@@ -26,7 +23,10 @@ public class Pickups : MonoBehaviour {
 	}
 
 	public bool TryDoorPos(Vector3Int pos) {
-		if (References.doorTilemap.GetTile(pos) == openDoorTile) return true;
+		if (References.doorTilemap.GetTile(pos) == openDoorTile) {
+			AudioPlayer.instance.Door();
+			return true;
+		}
 		else return false;
 	}
 
